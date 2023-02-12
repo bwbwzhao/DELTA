@@ -1,0 +1,26 @@
+dataset: 'imagenet'
+class_num: 1000
+distri_type: 'iid' # 'iid', 'noniid', 'lt', 'noniidlt'
+imb_factor: 0.05 # for lt
+noniid_factor: 0.5 # for noniid
+algorithm: 'delta'
+data_corruption_dir: '/dockerdata/imagenet-c'
+output: './output'
+pretrained_model_dir: ''
+arch: 'resnet50'
+batch_size: 64
+level: 5
+exp_type: 'each_shift_reset'  
+corruption: 'gaussian_noise'
+workers: 2
+seed: 2020
+optim_type: 'sgd'
+optim_lr: 0.00025
+optim_wd: 0.
+optim_momentum: 0.9
+loss_type: 'entropy' # 'entropy', 'cross_entropy'
+ent_w: False
+norm_type: 'rn' # 'bn_training', 'rn'
+old_prior: 0.95
+dot: 0.95
+prefix: 'tentdelta' 
